@@ -1,1 +1,59 @@
-:root{font-family:system-ui,-apple-system,sans-serif;color:#222;background:#f5f6fa}*{box-sizing:border-box}body{margin:0}main{max-width:600px;margin:auto;padding:18px}header{margin-bottom:20px}h1{font-size:1.65rem;margin:0}header p{color:#777;margin:5px 0}section{background:#fff;border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 2px 12px #0000000b}h2{font-size:1.15rem;margin:0 0 15px}.total{background:#ee4d2d;color:white;display:grid;gap:6px}.total strong{font-size:2rem}form{display:grid;gap:12px}label{display:grid;gap:6px;font-weight:600;font-size:.9rem}input,select{width:100%;padding:13px;border:1px solid #d5d5d5;border-radius:10px;font:inherit;background:white}button,.importar{border:0;background:#ee4d2d;color:white;border-radius:10px;padding:13px;font-weight:700;font-size:1rem;cursor:pointer;text-align:center}.importar{display:block;margin-top:10px}.importar input{display:none}.linha{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #eee;padding:11px 0}.linha:last-child{border:0}.linha small{color:#777;display:block;margin-top:4px}.linha button{padding:7px 10px;background:#eee;color:#333;font-size:.85rem}.backup p{font-size:.8rem;color:#666;line-height:1.5}
+:root{font-family:system-ui,-apple-system,sans-serif;color:#222;background:#f5f6fa}*{box-sizing:border-box}body{margin:0}main{max-width:600px;margin:auto;padding:18px}header{margin-bottom:20px}h1{font-size:1.65rem;margin:0}header p{color:#777;margin:5px 0}section{background:#fff;border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 2px 12px #0000000b}h2{font-size:1.15rem;margin:0 0 15px}.total{background:#ee4d2d;color:white;display:grid;gap:6px}.total strong{font-size:2rem}form{display:grid;gap:12px}label{display:grid;gap:6px;font-weight:600;font-size:.9rem}input,select{width:100%;padding:13px;border:1px solid #d5d5d5;border-radius:10px;font:inherit;background:white}button,.importar{border:0;background:#ee4d2d;color:white;border-radius:10px;padding:13px;font-weight:700;font-size:1rem;cursor:pointer;text-align:center}.importar{display:block;margin-top:10px}.importar input{display:none}.linha{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #eee;padding:11px 0}.linha:last-child{border:0}.linha small{color:#777;display:block;margin-top:4px}.linha button{padding:7px 10px;background:#eee;color:#333;font-size:.85rem}.backup p,.ajuda{font-size:.85rem;color:#666;line-height:1.5}.abas{display:grid;grid-template-columns:1fr 1fr;gap:8px}.abas button{background:#e5e5e5;color:#333}.abas button.ativa{background:#ee4d2d;color:white}[hidden]{display:none!important}.titulo-linha{display:flex;justify-content:space-between;gap:8px;align-items:center}.titulo-linha span{font-size:.85rem;color:#666}.item{border-bottom:1px solid #eee;padding:13px 0;display:grid;gap:9px}.item:last-child{border:0}.item-cabecalho{display:flex;gap:10px;align-items:center}.item-cabecalho input{width:23px;height:23px;flex-shrink:0;accent-color:#ee4d2d}.item-cabecalho strong{flex:1;overflow-wrap:anywhere}.item.feito .item-cabecalho strong{text-decoration:line-through;color:#777}.item .campos{display:grid;grid-template-columns:1fr 1fr;gap:8px}.item .campos label{font-size:.78rem}.item .campos input{padding:9px}.item .botoes{display:flex;gap:8px;flex-wrap:wrap}.item .botoes button{padding:8px 10px;font-size:.82rem;background:#eee;color:#333}.resumo{display:grid;gap:8px;margin:15px 0;padding:12px;background:#f6f6f6;border-radius:10px}.resumo div{display:flex;justify-content:space-between;gap:10px}.secundario{background:#eee;color:#333;width:100%}.acoes{display:grid;gap:10px}.historico-item{padding:12px 0;border-bottom:1px solid #eee}.historico-item:last-child{border:0}.historico-item p{font-size:.85rem;color:#666;line-height:1.5;overflow-wrap:anywhere}
+
+.novo-mercado{margin-top:12px;display:grid;gap:8px}.novo-mercado button{background:#eee;color:#333}.campos{display:grid;grid-template-columns:1fr 1fr;gap:10px}.campos label{min-width:0}.item small{display:block}.item .campos{grid-template-columns:1fr 1fr}
+
+.item-cabecalho .item-texto{flex:1;min-width:0;overflow-wrap:anywhere}.item-cabecalho .item-texto strong{display:block}.item-total{white-space:nowrap;font-size:.92rem}.abrir-detalhes{background:#eee;color:#333;padding:7px 9px;font-size:.78rem}.detalhes-item{padding:12px 0 0 33px}.detalhes-item[hidden]{display:none}.detalhes-item .campos{grid-template-columns:1fr 1fr}.detalhes-item .campos label{font-size:.76rem}.detalhes-item .campos input{padding:9px}.item .item-cabecalho{gap:7px}.resumo strong{white-space:nowrap}@media(max-width:390px){.item-cabecalho .item-total{font-size:.8rem}.abrir-detalhes{font-size:.72rem;padding:6px}.detalhes-item{padding-left:0}}
+
+.catalogo{max-height:340px;overflow-y:auto;border:1px solid #eee;border-radius:10px;margin-top:12px}.grupo-catalogo{border-bottom:1px solid #eee;padding:7px 10px}.grupo-catalogo summary{cursor:pointer;font-weight:700;padding:8px 0}.produto-catalogo{display:flex;align-items:center;gap:10px;font-weight:400;padding:9px 5px;border-top:1px solid #f4f4f4;cursor:pointer}.produto-catalogo input{width:21px;height:21px;accent-color:#ee4d2d;flex:none}.produto-catalogo span{flex:1}#busca-catalogo{margin-top:4px}
+
+/* Versão 2.4: lista enxuta, estilo nota fiscal */
+.nota-cabecalho{display:flex;justify-content:space-between;font-size:.76rem;color:#777;border-bottom:2px dashed #ddd;padding:10px 0 6px}
+.nota-item{padding:8px 0;border-bottom:1px dashed #ddd}
+.nota-item .item-cabecalho{gap:8px}
+.nota-item .item-cabecalho .item-texto strong{text-decoration:none;color:#222;font-size:.94rem}
+.nota-item.feito .item-cabecalho .item-texto strong{text-decoration:line-through;color:#777}
+.nota-item .item-cabecalho .item-texto small{font-size:.73rem;margin-top:2px}
+.nota-item .abrir-detalhes{padding:6px 8px}
+.nota-item .detalhes-item{padding:12px 4px 8px 30px}
+.nota-item .detalhes-item .campos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.nota-item .detalhes-item .campos label:last-child{grid-column:1/-1}
+.preview-total{font-weight:700;text-align:right;margin:10px 0}
+.total-nota{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:2px dashed #bbb;padding:14px 0;margin-top:8px;font-weight:700}
+.total-nota strong{font-size:1.4rem;color:#ee4d2d}
+.painel-extra{background:#fff;border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 2px 12px #0000000b}
+.painel-extra summary{font-weight:700;cursor:pointer}
+#resumo-mercados:empty{display:none}
+.busca-curta{margin-bottom:8px}
+
+/* Remover um item diretamente da lista, mantendo-o no catálogo */
+.remover-direto{background:#fff1f0!important;color:#b42318!important;border:1px solid #ffd1cd!important;min-width:35px;padding:7px 9px!important;font-size:1.15rem!important;line-height:1!important}
+
+/* Histórico organizado como notas de caixa, por supermercado. */
+.historico-ferramentas{display:grid;gap:8px;margin:12px 0 18px}
+.historico-ferramentas select{width:100%}
+.botao-perigo{background:#fff1f0!important;color:#a11c17!important;border:1px solid #f3b2aa!important;font-size:.85rem!important}
+.historico-arquivo{border-top:2px solid #eee;margin-top:18px;padding-top:12px}
+.data-nota{font-size:.82rem;color:#666;margin-bottom:8px}
+.recibo-mercado{border:1px solid #e7e7e7;border-radius:10px;padding:12px;margin:10px 0;background:#fff}
+.recibo-nome{display:block;font-size:1.1rem;margin-bottom:10px}
+.recibo-linha{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;border-bottom:1px dashed #ddd;padding:8px 0;font-size:.87rem}
+.recibo-linha>div{min-width:0;overflow-wrap:anywhere}
+.recibo-linha small{display:block;color:#666;margin-top:3px;font-size:.77rem}
+.recibo-cabecalho{font-size:.72rem;color:#777}
+.recibo-total{border-bottom:0;border-top:2px dashed #aaa;margin-top:5px;font-size:1rem}
+
+/* v3.1: catálogo compacto, seleção sem checkbox e histórico discreto */
+.catalogo-titulo{cursor:pointer;font-size:1.15rem;font-weight:750;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.catalogo-titulo::-webkit-details-marker{display:none}
+.catalogo-indicador{font-size:.95rem;color:#777}
+#catalogo-painel:not([open]) .catalogo-indicador{transform:rotate(-90deg)}
+#catalogo-painel[open] .busca-curta{margin-top:14px}
+.produto-acao{display:block;width:100%;background:#fff!important;color:#222!important;border:0!important;border-bottom:1px solid #eee!important;border-radius:0!important;text-align:left!important;padding:12px 10px!important;font-weight:500!important;font-size:1rem!important}
+.produto-acao:active{background:#ffe7df!important;transform:scale(.99)}
+.produto-acao:focus-visible{outline:2px solid #ee4d2d;outline-offset:-2px}
+.aviso-catalogo{margin-top:10px;padding:10px 12px;border-radius:9px;background:#e8f6eb;color:#216e38;font-size:.9rem;font-weight:600}
+.aviso-catalogo[hidden]{display:none}
+.historico-compacto{padding:8px 12px;width:max-content;max-width:100%;margin-left:auto}
+.historico-compacto[open]{width:100%}
+.historico-compacto>summary{font-size:.82rem;color:#8b341e;white-space:nowrap}
+.recibo-nome{color:#9e3b21;background:#fff0e9;padding:9px 10px;border-radius:7px;font-weight:800}
