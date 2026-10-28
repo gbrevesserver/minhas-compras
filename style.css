@@ -57,3 +57,17 @@
 .historico-compacto[open]{width:100%}
 .historico-compacto>summary{font-size:.82rem;color:#8b341e;white-space:nowrap}
 .recibo-nome{color:#9e3b21;background:#fff0e9;padding:9px 10px;border-radius:7px;font-weight:800}
+
+/* v3.2: catálogo invisível até a primeira letra, sugestões compactas */
+#catalogo[hidden]{display:none!important}
+#catalogo{max-height:240px;margin-top:6px;overflow-y:auto}
+#catalogo .produto-catalogo{display:block;width:100%;text-align:left;padding:10px 12px;border:0;border-bottom:1px solid #eee;background:#fff;color:inherit;font:inherit;cursor:pointer}
+#catalogo .produto-catalogo:active{background:#edf5ff}
+
+/* v3.3: títulos vermelhos e seleção de supermercado mais compacta */
+h1, h2, .catalogo-titulo, .historico-compacto > summary,
+.painel-extra > summary, .grupo-catalogo summary,
+.titulo-local, label:has(#catalogo-novo) {
+  color: #c62828;
+}
+.titulo-local { font-size: 1.05rem; font-weight: 750; }
