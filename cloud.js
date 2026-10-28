@@ -12,7 +12,7 @@ login.onclick=async()=>{try{mensagem('Abrindo login Google…');await setPersist
 sair.onclick=()=>signOut(auth);
 function acompanhar(ref,tipo){return new Promise((resolve,reject)=>{let primeiro=true;const stop=onSnapshot(ref,snap=>{if(snap.metadata.hasPendingWrites)return;const dado=snap.exists()?snap.data().valor:(tipo==='compras'?[]:{atual:[],historico:[],mercados:['Guanabara','Assaí Atacadista','Atacadão','Supermarket','Mundial','Prezunic','Dom Atacadista','Costa Azul'],selecionado:'Guanabara',catalogoExtra:[]});window.aplicarNuvem(tipo,dado);if(primeiro){primeiro=false;resolve();}},e=>{if(primeiro)reject(e);else{limpar();mensagem('Sem permissão ou conexão: '+e.message);}});unsubscribe.push(stop);});}
 onAuthStateChanged(auth,async user=>{limpar();login.style.display=user?'none':'inline-block';sair.style.display=user?'inline-block':'none';if(!user){mensagem('Entre com sua conta Google para acessar os dados.');return;}
-if(!user.email_verified){mensagem('Sua conta Google precisa ter e-mail verificado.');return;}
+
 if(user.email.toLowerCase()!==OWNER){mensagem('Esta conta não é autorizada para o aplicativo Compras.');return;}
 mensagem('Carregando seus dados da nuvem…');
 const mercadoRef=doc(db,'familias','familia-principal','dados','supermercado');
