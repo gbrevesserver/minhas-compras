@@ -16,7 +16,7 @@ try{const salvo=JSON.parse(localStorage.getItem(KEY_MERCADO)||'null');if(salvo&&
 if(!Array.isArray(mercado.catalogoExtra))mercado.catalogoExtra=[];
 if(!Array.isArray(mercado.mercados))mercado.mercados=[...MERCADOS_PADRAO];
 if(typeof mercado.selecionado!=='string'||!mercado.selecionado)mercado.selecionado=mercado.mercados[0]||MERCADOS_PADRAO[0];
-function persistir(chave,valor){localStorage.setItem(chave,JSON.stringify(valor));}
+function persistir(chave,valor){localStorage.setItem(chave,JSON.stringify(valor));if(window.firebaseSalvar)window.firebaseSalvar(chave,valor);}
 function salvarCompras(){persistir(KEY,compras);renderizarCompras()}
 function alterarMercado(mudanca){const anterior=structuredClone(mercado);try{mudanca();persistir(KEY_MERCADO,mercado);renderizarMercado();return true}catch(e){mercado=anterior;alert('Não foi possível salvar a lista. Verifique o armazenamento.');return false}}
 // O histórico é atualizado automaticamente quando um item entra no carrinho.
@@ -200,3 +200,10 @@ function mercadoValido(m){return m&&(!m.catalogoExtra||Array.isArray(m.catalogoE
 $('importar').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>15000000)throw Error('Arquivo muito grande');const obj=JSON.parse(await file.text());if(!Array.isArray(obj.compras)||obj.compras.length>100000||!obj.compras.every(compraValida))throw Error('Compras inválidas');const novoMercado=obj.supermercado===undefined?null:obj.supermercado;if(novoMercado!==null&&!mercadoValido(novoMercado))throw Error('Lista de supermercado inválida');if(confirm('Substituir as compras atuais pelo backup? Faça uma exportação antes.')){const antCompras=localStorage.getItem(KEY),antMercado=localStorage.getItem(KEY_MERCADO);try{persistir(KEY,obj.compras);if(novoMercado!==null)persistir(KEY_MERCADO,novoMercado);compras=obj.compras;if(novoMercado!==null){mercado=novoMercado;if(!Array.isArray(mercado.mercados))mercado.mercados=[...MERCADOS_PADRAO];if(!Array.isArray(mercado.catalogoExtra))mercado.catalogoExtra=[];if(!mercado.selecionado)mercado.selecionado=mercado.mercados[0]||MERCADOS_PADRAO[0];}renderizarCompras();renderizarMercado();alert('Backup importado.')}catch(err){if(antCompras===null)localStorage.removeItem(KEY);else localStorage.setItem(KEY,antCompras);if(antMercado===null)localStorage.removeItem(KEY_MERCADO);else localStorage.setItem(KEY_MERCADO,antMercado);throw err}}}catch(err){alert('Não foi possível importar: '+err.message)}e.target.value=''};
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
 renderizarCompras();renderizarMercado();
+
+
+// Ponte entre a interface original e o Firestore.
+window.aplicarNuvem=(tipo,valor)=>{
+ if(tipo==='mercado'){if(!valor||!Array.isArray(valor.atual)||!Array.isArray(valor.historico))return;mercado=valor;renderizarMercado();}
+ else if(tipo==='compras'){if(!Array.isArray(valor))return;compras=valor;renderizarCompras();}
+};
