@@ -71,3 +71,6 @@ h1, h2, .catalogo-titulo, .historico-compacto > summary,
   color: #c62828;
 }
 .titulo-local { font-size: 1.05rem; font-weight: 750; }
+
+/* v3.4: nome do mercado e subtotal em vermelho e negrito, sem mudar o tamanho */
+#resumo-mercados .ajuda { color: #c62828; font-weight: 700; }
